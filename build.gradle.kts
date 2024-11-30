@@ -5,7 +5,7 @@ val depends = mapOf(
     "exposed" to "0.56.0",
     "invui" to "1.41",
     "commandapi" to "9.6.0",
-    "paper" to "1.20.4-R0.1-SNAPSHOT"
+    "paper" to "1.20.4-R0.1-SNAPSHOT",
 )
 
 plugins {

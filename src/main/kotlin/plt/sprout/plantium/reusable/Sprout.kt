@@ -5,6 +5,8 @@ import java.util.logging.Logger
 import org.bukkit.Server
 import org.bukkit.plugin.java.JavaPlugin
 import org.bukkit.scheduler.BukkitScheduler
+import dev.jorel.commandapi.CommandAPI
+import dev.jorel.commandapi.CommandAPIBukkitConfig
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -47,12 +49,16 @@ abstract class Sprout(val label: String) : CoroutineScope {
 
     override val coroutineContext = Dispatchers.IO + coroutineJob
 
-    open fun load(instance: JavaPlugin) {
+    open fun load(instance: JavaPlugin, commandAPIConfiguration: CommandAPIBukkitConfig) {
         plugin = instance
         sprout = this
+
+        CommandAPI.onLoad(commandAPIConfiguration)
     }
 
     open fun enable() {
+        CommandAPI.onEnable()
+
         database?.initialise()
 
         configurations.forEach { configuration ->
@@ -70,6 +76,8 @@ abstract class Sprout(val label: String) : CoroutineScope {
         }
 
         database?.finalise()
+
+        CommandAPI.onDisable()
     }
 
     fun listen(listener: Listener) {

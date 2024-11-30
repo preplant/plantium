@@ -2,6 +2,7 @@
 
 package plt.sprout.plantium.reusable
 
+import plt.sprout.plantium.reusable.Sprout.Companion.sprout
 import kotlin.reflect.KMutableProperty1
 import kotlin.reflect.full.memberProperties
 import kotlin.reflect.jvm.isAccessible
@@ -9,7 +10,6 @@ import java.io.File
 import java.io.InputStreamReader
 import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.configuration.file.YamlConfiguration
-import plt.sprout.plantium.reusable.Sprout.Companion.sprout
 
 abstract class Configuration(val label: String, val path: String) {
     private val file: File by lazy {

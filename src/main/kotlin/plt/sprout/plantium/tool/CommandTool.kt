@@ -1,8 +1,8 @@
 package plt.sprout.plantium.tool
 
+import plt.sprout.plantium.reusable.Sprout.Companion.sprout
 import dev.jorel.commandapi.CommandPermission
 import dev.jorel.commandapi.arguments.Argument
-import plt.sprout.plantium.reusable.Sprout.Companion.sprout
 
 object CommandTool {
     fun getCommandPermission(permission: String): CommandPermission {

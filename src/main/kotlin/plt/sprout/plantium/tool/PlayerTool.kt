@@ -1,12 +1,12 @@
 package plt.sprout.plantium.tool
 
 import org.bukkit.Sound as BukkitSound
+import plt.sprout.plantium.reusable.Sprout.Companion.sprout
+import plt.sprout.plantium.tool.TextTool.deserialize
 import java.time.Duration
 import org.bukkit.entity.Player
 import net.kyori.adventure.sound.Sound
 import net.kyori.adventure.title.Title
-import plt.sprout.plantium.reusable.Sprout.Companion.sprout
-import plt.sprout.plantium.tool.TextTool.deserialize
 
 object PlayerTool {
     fun Player.messageDSR(

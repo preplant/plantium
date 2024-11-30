@@ -1,12 +1,12 @@
 package plt.sprout.plantium.reusable
 
+import plt.sprout.plantium.reusable.Sprout.Companion.sprout
 import org.bukkit.NamespacedKey
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.ShapedRecipe
-import plt.sprout.plantium.reusable.Sprout.Companion.sprout
 
 abstract class Recipe(val label: String) : Listener() {
     abstract val output: ItemStack

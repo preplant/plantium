@@ -1,5 +1,7 @@
 package plt.sprout.plantium.tool
 
+import plt.sprout.plantium.tool.TextTool.deserialize
+import plt.sprout.plantium.tool.TextTool.removeUnusedDecorations
 import org.bukkit.Material
 import org.bukkit.enchantments.Enchantment
 import org.bukkit.inventory.ItemFlag
@@ -8,8 +10,6 @@ import org.bukkit.inventory.meta.PotionMeta
 import org.bukkit.potion.PotionType
 import xyz.xenondevs.invui.item.ItemProvider
 import com.google.common.collect.HashMultimap
-import plt.sprout.plantium.tool.TextTool.deserialize
-import plt.sprout.plantium.tool.TextTool.removeUnusedDecorations
 
 class ItemTool : ItemProvider {
     constructor(material: Material, amount: Int = 1) {

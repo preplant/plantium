@@ -1,9 +1,9 @@
 package plt.sprout.plantium.reusable
 
+import plt.sprout.plantium.tool.CommandTool
 import dev.jorel.commandapi.CommandPermission
 import dev.jorel.commandapi.arguments.Argument
 import dev.jorel.commandapi.arguments.MultiLiteralArgument
-import plt.sprout.plantium.tool.CommandTool
 
 abstract class Subcommand(val parent: Command, val sublabel: String) {
     val label: String = parent.label

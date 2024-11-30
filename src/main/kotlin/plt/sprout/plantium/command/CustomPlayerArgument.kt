@@ -1,5 +1,7 @@
 package plt.sprout.plantium.command
 
+import plt.sprout.plantium.reusable.Sprout.Companion.sprout
+import plt.sprout.plantium.tool.CommandTool.configureCustomArgument
 import org.bukkit.entity.Player
 import dev.jorel.commandapi.CommandPermission
 import dev.jorel.commandapi.arguments.ArgumentSuggestions
@@ -7,8 +9,6 @@ import dev.jorel.commandapi.arguments.CustomArgument
 import dev.jorel.commandapi.arguments.CustomArgument.CustomArgumentException
 import dev.jorel.commandapi.arguments.CustomArgument.MessageBuilder
 import dev.jorel.commandapi.arguments.StringArgument
-import plt.sprout.plantium.reusable.Sprout.Companion.sprout
-import plt.sprout.plantium.tool.CommandTool.configureCustomArgument
 
 class CustomPlayerArgument(
     optional: Boolean = false,

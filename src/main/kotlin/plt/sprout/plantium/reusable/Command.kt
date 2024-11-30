@@ -1,9 +1,9 @@
 package plt.sprout.plantium.reusable
 
+import plt.sprout.plantium.tool.CommandTool
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandPermission
 import dev.jorel.commandapi.CommandTree
-import plt.sprout.plantium.tool.CommandTool
 
 abstract class Command(val label: String) : Provider {
     open val subcommands: List<Subcommand> = emptyList()

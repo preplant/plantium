@@ -1,3 +1,5 @@
+val javaLanguageVersion = 21
+
 project.group = "plt.sprout.plantium"
 project.version = "1.0.0"
 
@@ -18,11 +20,17 @@ plugins {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(javaLanguageVersion))
     }
 
     withSourcesJar()
     withJavadocJar()
+}
+
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(javaLanguageVersion))
+    }
 }
 
 repositories {

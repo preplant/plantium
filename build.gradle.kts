@@ -1,21 +1,14 @@
-val javaLanguageVersion = 21
+val javaLanguageVersion = 17
 
 project.group = "plt.sprout.plantium"
 project.version = "1.0.0"
 
-val depends = mapOf(
-    "exposed" to "0.56.0",
-    "invui" to "1.41",
-    "commandapi" to "9.6.0",
-    "paper" to "1.20.4-R0.1-SNAPSHOT",
-)
-
 plugins {
-    kotlin("jvm") version "2.0.0"
+    alias(libs.plugins.kotlinJvm)
+    alias(libs.plugins.shadow)
 
     id("maven-publish")
     id("java-library")
-    id("com.gradleup.shadow") version "8.3.5"
 }
 
 java {
@@ -77,19 +70,15 @@ publishing {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-    implementation(kotlin("reflect"))
-
-    api("org.jetbrains.exposed", "exposed-core", depends["exposed"])
-    api("org.jetbrains.exposed", "exposed-dao", depends["exposed"])
-    api("org.jetbrains.exposed", "exposed-jdbc", depends["exposed"])
-
-    api("xyz.xenondevs.invui", "invui", depends["invui"])
-    api("xyz.xenondevs.invui", "invui-kotlin", depends["invui"])
-
-    api("dev.jorel", "commandapi-bukkit-shade", depends["commandapi"])
-
-    compileOnly("io.papermc.paper", "paper-api", depends["paper"])
+    implementation(libs.kotlinStdlib)
+    implementation(libs.kotlinReflect)
+    api(libs.exposedCore)
+    api(libs.exposedDao)
+    api(libs.exposedJdbc)
+    api(libs.invui)
+    api(libs.invuiKotlin)
+    api(libs.commandapiBukkitShade)
+    compileOnly(libs.paperApi)
 }
 
 sourceSets {

@@ -1,5 +1,6 @@
 package plt.sprout.plantium.reusable
 
+import plt.sprout.plantium.tool.ItemTool
 import java.io.File
 import java.util.logging.Logger
 import org.bukkit.Server
@@ -7,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin
 import org.bukkit.scheduler.BukkitScheduler
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIBukkitConfig
+import xyz.xenondevs.invui.gui.structure.Structure
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -64,6 +66,10 @@ abstract class Sprout(val label: String) : CoroutineScope {
         configurations.forEach { configuration ->
             configuration.load()
         }
+
+        Structure.addGlobalIngredient('#', ItemTool.border)
+        Structure.addGlobalIngredient('<', Controller.BackItem)
+        Structure.addGlobalIngredient('>', Controller.NextItem)
 
         modules.forEach { module ->
             module.register()

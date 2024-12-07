@@ -7,16 +7,16 @@ commandapi = "9.6.0"
 paper = "1.20.4-R0.1-SNAPSHOT"
 
 [libraries]
-kotlinStdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
-kotlinReflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
+reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 exposedCore = { group = "org.jetbrains.exposed", name = "exposed-core", version.ref = "exposed" }
 exposedDao = { group = "org.jetbrains.exposed", name = "exposed-dao", version.ref = "exposed" }
 exposedJdbc = { group = "org.jetbrains.exposed", name = "exposed-jdbc", version.ref = "exposed" }
 invui = { group = "xyz.xenondevs.invui", name = "invui", version.ref = "invui" }
 invuiKotlin = { group = "xyz.xenondevs.invui", name = "invui-kotlin", version.ref = "invui" }
-commandapiBukkitShade = { group = "dev.jorel", name = "commandapi-bukkit-shade", version.ref = "commandapi" }
-paperApi = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
+commandapi = { group = "dev.jorel", name = "commandapi-bukkit-shade", version.ref = "commandapi" }
+paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
 
 [plugins]
-kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }

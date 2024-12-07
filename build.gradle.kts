@@ -4,7 +4,7 @@ project.group = "plt.sprout.plantium"
 project.version = "2.0.0"
 
 plugins {
-    alias(libs.plugins.kotlinJvm)
+    alias(libs.plugins.kotlin)
     alias(libs.plugins.shadow)
 
     id("maven-publish")
@@ -70,15 +70,15 @@ publishing {
 }
 
 dependencies {
-    implementation(libs.kotlinStdlib)
-    implementation(libs.kotlinReflect)
+    implementation(libs.stdlib)
+    implementation(libs.reflect)
     api(libs.exposedCore)
     api(libs.exposedDao)
     api(libs.exposedJdbc)
     api(libs.invui)
     api(libs.invuiKotlin)
-    api(libs.commandapiBukkitShade)
-    compileOnly(libs.paperApi)
+    api(libs.commandapi)
+    compileOnly(libs.paper)
 }
 
 sourceSets {

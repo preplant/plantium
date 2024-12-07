@@ -63,7 +63,7 @@ class Cooldown(val label: String, private val length: Duration) {
             val elapsed = (System.currentTimeMillis() - start).milliseconds
             val formatted = formatDuration(duration - elapsed)
 
-            player.actionDSR("&fPlease wait &6$formatted seconds&f.")
+            player.actionDSR("&fPlease wait &6$formatted&f.")
             player.soundDSR(Sound.BLOCK_NOTE_BLOCK_BASS)
         }
     }

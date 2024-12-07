@@ -2,6 +2,7 @@ package plt.sprout.plantium.reusable
 
 import org.jetbrains.exposed.sql.Database as Exposed
 import plt.sprout.plantium.reusable.Sprout.Companion.sprout
+import kotlin.time.Duration
 import org.bukkit.scheduler.BukkitTask
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -10,7 +11,7 @@ import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
 import org.jetbrains.exposed.sql.transactions.transaction
 
-abstract class Database(val label: String, val path: String, private val interval: Long) {
+abstract class Database(val label: String, val path: String, private val autosave: Duration) {
     abstract val tables: List<Table>
 
     private var task: BukkitTask? = null
@@ -42,13 +43,15 @@ abstract class Database(val label: String, val path: String, private val interva
     protected abstract fun saveData()
 
     private fun startTask() {
+        val ticks = autosave.inWholeMilliseconds / 50
+
         task = sprout.planner.runTaskTimerAsynchronously(sprout.plugin, Runnable {
             sprout.launch {
                 newSuspendedTransaction(Dispatchers.IO) {
                     saveData()
                 }
             }
-        }, interval, interval)
+        }, ticks, ticks)
     }
 
     private fun stopTask() {

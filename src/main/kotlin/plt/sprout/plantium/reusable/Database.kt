@@ -17,6 +17,10 @@ abstract class Database(val label: String, val path: String, private val autosav
     private var task: BukkitTask? = null
 
     fun initialise() {
+        if (!sprout.folder.exists()) {
+            sprout.folder.mkdirs()
+        }
+
         Exposed.connect("jdbc:sqlite:${sprout.folder}/$path", "org.sqlite.JDBC")
 
         transaction {

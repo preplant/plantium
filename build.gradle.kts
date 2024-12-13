@@ -1,7 +1,7 @@
 val javaLanguageVersion = 17
 
 project.group = "plt.sprout.plantium"
-project.version = "2.3.0"
+project.version = "2.4.0"
 
 plugins {
     alias(libs.plugins.kotlin)

@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.0.0"
 shadow = "8.3.5"
-exposed = "0.56.0"
+exposed = "0.57.0"
 invui = "1.41"
 commandapi = "9.6.0"
 paper = "1.20.4-R0.1-SNAPSHOT"

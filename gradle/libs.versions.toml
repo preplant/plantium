@@ -1,5 +1,5 @@
 [versions]
-kotlin = "2.0.0"
+kotlin = "2.1.0"
 shadow = "8.3.5"
 exposed = "0.56.0"
 invui = "1.41"

@@ -1,0 +1,11 @@
+version: 2
+
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "17:00"
+    ignore:
+      - dependency-name: "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+        versions: [ ">=2.0.0" ]

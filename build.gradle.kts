@@ -72,12 +72,9 @@ publishing {
 dependencies {
     implementation(libs.stdlib)
     implementation(libs.reflect)
-    api(libs.exposedCore)
-    api(libs.exposedDao)
-    api(libs.exposedJdbc)
-    api(libs.invui)
-    api(libs.invuiKotlin)
-    api(libs.commandapi)
+    api(libs.bundles.exposed)
+    api(libs.bundles.invUI)
+    api(libs.commandAPI)
     compileOnly(libs.paper)
 }
 

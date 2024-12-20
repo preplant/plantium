@@ -2,20 +2,23 @@
 kotlin = "2.0.0"
 shadow = "8.3.5"
 exposed = "0.57.0"
-invui = "1.43"
-commandapi = "9.7.0"
+invUI = "1.43"
+commandAPI = "9.7.0"
 paper = "1.20.4-R0.1-SNAPSHOT"
 
 [libraries]
 stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
 reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
 exposedCore = { group = "org.jetbrains.exposed", name = "exposed-core", version.ref = "exposed" }
-exposedDao = { group = "org.jetbrains.exposed", name = "exposed-dao", version.ref = "exposed" }
 exposedJdbc = { group = "org.jetbrains.exposed", name = "exposed-jdbc", version.ref = "exposed" }
-invui = { group = "xyz.xenondevs.invui", name = "invui", version.ref = "invui" }
-invuiKotlin = { group = "xyz.xenondevs.invui", name = "invui-kotlin", version.ref = "invui" }
-commandapi = { group = "dev.jorel", name = "commandapi-bukkit-shade", version.ref = "commandapi" }
+invUI = { group = "xyz.xenondevs.invui", name = "invui", version.ref = "invUI" }
+invUIKotlin = { group = "xyz.xenondevs.invui", name = "invui-kotlin", version.ref = "invUI" }
+commandAPI = { group = "dev.jorel", name = "commandapi-bukkit-shade", version.ref = "commandAPI" }
 paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
+
+[bundles]
+exposed = ["exposedCore", "exposedJdbc"]
+invUI = ["invUI", "invUIKotlin"]
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
